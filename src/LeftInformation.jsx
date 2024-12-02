@@ -31,7 +31,7 @@ function LeftInformation({ name_1, name_2, Point_1, Point_2, onSubmit }) {
               type="text"
               name={name_1}
               onChange={handleInputChange}
-              placeholder="Enter Name"
+              placeholder={name_1}
             />
 
             <h2>{Point_2}</h2>
@@ -39,7 +39,7 @@ function LeftInformation({ name_1, name_2, Point_1, Point_2, onSubmit }) {
               type="text"
               name={name_2}
               onChange={handleInputChange}
-              placeholder="Enter Job Title"
+              placeholder={name_2}
             />
           </div>
 
