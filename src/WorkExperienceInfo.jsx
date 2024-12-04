@@ -20,9 +20,11 @@ function WorkExperienceInfo({submission=[], name_1, name_2}){
             setSubmission_2((prevSubmission) => prevSubmission.map((data, index) =>
                 index === editingIndex ? formData : data
               ));
-            
-           
-            
+
+                const updatedEntry = submission_2[editingIndex];
+                console.log("Updated Employer:", updatedEntry[name_1]);
+                console.log("Updated Date:", updatedEntry[name_2]);
+        
         }
         else{
             setSubmission_2((prevSubmission) => [...prevSubmission, formData]);
@@ -46,7 +48,7 @@ function WorkExperienceInfo({submission=[], name_1, name_2}){
                  <>
                     <ol>
                         <div id="experience_left"><LeftInformation 
-                                                    name_1 = "employer" name_2="date" 
+                                                    name_1="employer" name_2="date"
                                                     Point_1="Enter Your Employer Name: " Point_2="Date of Employment: " 
                                                     onSubmit={handleFormSubmit_2}
                                                     existingData={submission_2[editingIndex]} /></div>

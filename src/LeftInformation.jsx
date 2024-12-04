@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function LeftInformation({ name_1, name_2, Point_1, Point_2, onSubmit }) {
+function LeftInformation({ name_1, name_2, Point_1, Point_2, onSubmit, existingData={} }) {
   const [formData, setFormData] = useState({
-    fName: "",
-    jobTitle: "",
+    [name_1]: existingData[name_1] || "",
+    [name_2]: existingData[name_2] || "",
   });
 
   const handleInputChange = (e) => {
@@ -12,13 +12,18 @@ function LeftInformation({ name_1, name_2, Point_1, Point_2, onSubmit }) {
       ...formData,
       [name]: value,
     });
+    console.log(formData);
+
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit(formData);
     //cleaner inputs
-    event.target.reset();
+    setFormData({
+      [name_1]:"",
+      [name_2]:"",
+    });
   };
 
   return (
@@ -32,6 +37,7 @@ function LeftInformation({ name_1, name_2, Point_1, Point_2, onSubmit }) {
               name={name_1}
               onChange={handleInputChange}
               placeholder={name_1}
+              value={formData[name_1]}
             />
 
             <h2>{Point_2}</h2>
@@ -40,6 +46,7 @@ function LeftInformation({ name_1, name_2, Point_1, Point_2, onSubmit }) {
               name={name_2}
               onChange={handleInputChange}
               placeholder={name_2}
+              value={formData[name_2]}
             />
           </div>
 

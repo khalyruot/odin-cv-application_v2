@@ -38,7 +38,7 @@ function App() {
   return (
     <div id="container">
       <div id="leftSide" >
-        <div id="basic_info_left"><LeftInformation name_1 = "fName" name_2="jobTitle" Point_1="Enter Your Name: " Point_2="Your Profession: " onSubmit={handleFormSubmit_1} /></div>
+        <div id="basic_info_left"><LeftInformation name_1 = "fName" name_2="jobTitle" Point_1="Enter Your Name: " Point_2="Your Profession: " onSubmit={handleFormSubmit_1} value_1={submission_1[0]?.fName || ""} value_2={submission_1[0]?.jobTitle || ""}/></div>
         <div id="experience_left"><LeftInformation name_1 = "employer" name_2="date" Point_1="Enter Your Employer Name: " Point_2="Date of Employment: " onSubmit={handleFormSubmit_2} /></div>
         <div id="education_left"><LeftInformation name_1 = "degree" name_2="school"Point_1="Enter Your Degree: " Point_2="Enter Your School Name: " onSubmit={handleFormSubmit_3} /></div>
       </div>
